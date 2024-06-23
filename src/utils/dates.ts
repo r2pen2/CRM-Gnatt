@@ -4,7 +4,7 @@ import { Day } from "@/types/global";
 export const daysInYear = (year: number) =>
   (year % 4 === 0 && year % 100 > 0) || year % 400 === 0 ? 366 : 365;
 
-export const getIsBusinessDay = (date: dayjs.Dayjs) => {
+const getIsBusinessDay = (date: dayjs.Dayjs) => {
   const day = date.day();
   return day !== 0 && day !== 6;
 };

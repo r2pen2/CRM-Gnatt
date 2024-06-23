@@ -32,7 +32,7 @@ export const drawDaysOnBottom = (ctx: CanvasRenderingContext2D, cols: number, st
       width: dayWidth,
       height: headerDayHeight,
       isBottomRow: true,
-      fillStyle: getBoxFillStyle({ isCurrent: day.isCurrentDay, isBusinessDay: day.isBusinessDay }),
+      fillStyle: getBoxFillStyle({ isCurrent: day.isCurrentDay }),
       topText: {
         y: dayNameYPos,
         label: day.dayName.toUpperCase(),

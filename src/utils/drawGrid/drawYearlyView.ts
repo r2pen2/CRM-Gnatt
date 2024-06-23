@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import { boxHeight, singleDayWidth, weekWidth } from "@/constants";
 import { Day } from "@/types/global";
 import { drawDashedLine } from "../drawDashedLine";
@@ -15,15 +14,8 @@ export const drawYearlyView = (
   let startPos = -(startDate.dayOfMonth - 1) * singleDayWidth;
 
   for (let i = 0; i <= cols; i++) {
-    const week = dayjs(`${startDate.year}-${startDate.month + 1}-${startDate.dayOfMonth}`).add(
-      i,
-      "weeks"
-    );
-
-    const isCurrWeek = week.isSame(dayjs(), "week");
-
     for (let y = 0; y < rows; y++) {
-      drawCell(ctx, xPos, y * boxHeight, weekWidth, true, isCurrWeek);
+      drawCell(ctx, xPos, y * boxHeight, weekWidth, true);
     }
 
     xPos += weekWidth;

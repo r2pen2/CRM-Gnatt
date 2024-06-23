@@ -1,7 +1,6 @@
 import dayjs from "dayjs";
 import { Day } from "@/types/global";
 import { boxHeight, dayWidth } from "@/constants";
-import { getIsBusinessDay } from "../dates";
 import { drawCell } from "./drawCell";
 
 export const drawMonthlyView = (
@@ -19,7 +18,7 @@ export const drawMonthlyView = (
 
       const isCurrentDay = date.isSame(dayjs(), "day");
 
-      drawCell(ctx, y * dayWidth, i * boxHeight, dayWidth, getIsBusinessDay(date), isCurrentDay);
+      drawCell(ctx, y * dayWidth, i * boxHeight, dayWidth, isCurrentDay);
     }
   }
 };

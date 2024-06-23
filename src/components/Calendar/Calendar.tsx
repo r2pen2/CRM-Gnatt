@@ -8,10 +8,12 @@ import { CalendarProps } from "./types";
 import { StyledOuterWrapper, StyledInnerWrapper } from "./styles";
 
 export const Calendar: FC<CalendarProps> = ({ data, onTileClick, onItemClick }) => {
-  const { zoom, date } = useCalendar();
+  const { zoom, date, zoomIn } = useCalendar();
   const gridRef = useRef<HTMLDivElement>(null);
   const datesRange = useMemo(() => getDatesRange(date, zoom), [date, zoom]);
   const { page, totalRowsPerPage, rowsPerItem } = usePagination(data, datesRange);
+
+  zoomIn(); // Enforce zoom 1
 
   return (
     <StyledOuterWrapper>
@@ -21,7 +23,7 @@ export const Calendar: FC<CalendarProps> = ({ data, onTileClick, onItemClick }) 
         {data.length ? (
           <Grid
             data={page}
-            zoom={1}
+            zoom={zoom}
             rows={totalRowsPerPage}
             ref={gridRef}
             onTileClick={onTileClick}

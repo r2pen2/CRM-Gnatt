@@ -9,7 +9,7 @@ import { StyledCanvas, StyledOuterWrapper, StyledWrapper } from "./styles";
 
 const Header: FC<HeaderProps> = ({ zoom }) => {
   const { week } = useLanguage();
-  const { date, cols, dayOfYear, startDate } = useCalendar();
+  const { date, cols, startDate } = useCalendar();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const handleResize = useCallback(
@@ -18,9 +18,9 @@ const Header: FC<HeaderProps> = ({ zoom }) => {
       const height = headerHeight + 1;
       resizeCanvas(ctx, width, height);
 
-      drawHeader(ctx, zoom, cols, startDate, week, dayOfYear);
+      drawHeader(ctx, zoom, cols, startDate, week);
     },
-    [cols, dayOfYear, startDate, week, zoom]
+    [cols, startDate, week, zoom]
   );
 
   useEffect(() => {
