@@ -52,7 +52,7 @@ const Scheduler = ({
   if (!outsideWrapperRef.current) null;
   return (
     <>
-      {/* <GlobalStyle />
+      <GlobalStyle />
       <ThemeProvider theme={theme}>
         <LocaleProvider lang={appConfig.lang}>
           <CalendarProvider
@@ -78,7 +78,7 @@ const Scheduler = ({
             </StyledOutsideWrapper>
           </CalendarProvider>
         </LocaleProvider>
-      </ThemeProvider> */}
+      </ThemeProvider>
     </>
   );
 };
