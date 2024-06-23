@@ -8,6 +8,7 @@ import svgr from "vite-plugin-svgr";
 export default defineConfig({
   resolve: {
     alias: {
+      // eslint-disable-next-line no-undef
       "@": resolve(__dirname, "./src")
     }
   },
@@ -34,6 +35,7 @@ export default defineConfig({
   ],
   build: {
     lib: {
+      // eslint-disable-next-line no-undef
       entry: resolve(__dirname, "src/index.ts"),
       name: "react-scheduler",
       fileName: "index"

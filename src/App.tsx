@@ -7,14 +7,14 @@ import { StyledSchedulerFrame } from "./styles";
 import { Scheduler } from ".";
 
 function App() {
-  const [values, setValues] = useState<ConfigFormValues>({
+  const values: ConfigFormValues = {
     peopleCount: 15,
     projectsPerYear: 5,
     yearsCovered: 0,
     startDate: undefined,
     maxRecordsPerPage: 50,
     isFullscreen: true
-  });
+  };
 
   const { peopleCount, projectsPerYear, yearsCovered, isFullscreen, maxRecordsPerPage } = values;
 
