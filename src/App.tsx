@@ -3,7 +3,6 @@ import dayjs from "dayjs";
 import { createMockData } from "./mock/appMock";
 import { ParsedDatesRange } from "./utils/getDatesRange";
 import { ConfigFormValues, SchedulerProjectData } from "./types/global";
-import ConfigPanel from "./components/ConfigPanel";
 import { StyledSchedulerFrame } from "./styles";
 import { Scheduler } from ".";
 
@@ -57,7 +56,6 @@ function App() {
 
   return (
     <>
-      <ConfigPanel values={values} onSubmit={setValues} />
       {isFullscreen ? (
         <Scheduler
           startDate={values.startDate ? new Date(values.startDate).toISOString() : undefined}
