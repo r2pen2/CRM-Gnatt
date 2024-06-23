@@ -28,6 +28,9 @@ export const Wrapper = styled.div<TopbarProps>`
 export const NavigationWrapper = styled.div`
   display: flex;
   gap: 1.875rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const NavBtn = styled.button`
