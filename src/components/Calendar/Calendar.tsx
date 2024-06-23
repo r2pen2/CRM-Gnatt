@@ -146,9 +146,9 @@ export const Calendar: FC<CalendarProps> = ({ data, onTileClick, onItemClick, to
         ) : (
           <EmptyBox />
         )}
-        {isVisible && tooltipData?.resourceIndex > -1 && (
+        {/* {isVisible && tooltipData?.resourceIndex > -1 && (
           <Tooltip tooltipData={tooltipData} zoom={zoom} />
-        )}
+        )} */}
       </StyledInnerWrapper>
     </StyledOuterWrapper>
   );
