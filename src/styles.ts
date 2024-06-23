@@ -44,11 +44,11 @@ export const theme: DefaultTheme = {
     black: "#1C222F",
     grey400: "#D2D2D2",
     grey600: "#777777",
-    blue900: "#3B3C5F",
-    blue100: "#F8F8FD",
-    blue300: "#C9E5FF",
-    blue400: "#0A11EB",
-    blue200: "#E6F3FF",
+    blue900: "#40c057",
+    blue100: "#ddf3de",
+    blue300: "#bbe7bd",
+    blue400: "#0B6726",
+    blue200: "#ccedce",
     red400: "#EF4444",
     white: "#FFFFFF"
   }
