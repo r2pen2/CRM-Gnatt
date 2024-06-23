@@ -102,7 +102,7 @@ const ConfigPanel: FC<ConfigPanelProps> = ({ values, onSubmit }) => {
             title="How many records per page? Default: 10"
           />
         </StyledInnerWrapper>
-        <StyledInnerWrapper>
+        {/* <StyledInnerWrapper>
           <StyledLabel htmlFor={formFieldsIds.isFullscreen}>Fullscreen: </StyledLabel>
           <StyledCheckbox
             id={formFieldsIds.isFullscreen}
@@ -111,14 +111,14 @@ const ConfigPanel: FC<ConfigPanelProps> = ({ values, onSubmit }) => {
             type="checkbox"
             onChange={handleChange}
           />
-        </StyledInnerWrapper>
-        {isExpanded ? (
+        </StyledInnerWrapper> */}
+        {/* {isExpanded ? (
           <StyledButton type="submit">Change</StyledButton>
         ) : (
           <StyledButton onClick={() => setIsExpanded(true)} type="button">
             Expand config panel
           </StyledButton>
-        )}
+        )} */}
       </StyledForm>
     </StyledWrapper>
   );

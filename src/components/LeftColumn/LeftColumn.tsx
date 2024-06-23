@@ -35,14 +35,14 @@ const LeftColumn: FC<LeftColumnProps> = ({
           />
           <Icon iconName="search" />
         </StyledInputWrapper>
-        <PaginationButton
+        {/* <PaginationButton
           intent="previous"
           isVisible={pageNum !== 0}
           onClick={onLoadPrevious}
           icon={<Icon iconName="arrowUp" width="16" height="16" />}
           pageNum={pageNum}
           pagesAmount={pagesAmount}
-        />
+        /> */}
       </StyledLeftColumnHeader>
       {data.map((item, index) => (
         <LeftColumnItem
