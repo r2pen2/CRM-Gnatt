@@ -7,7 +7,7 @@ import { resizeCanvas } from "@/utils/resizeCanvas";
 import { HeaderProps } from "./types";
 import { StyledCanvas, StyledOuterWrapper, StyledWrapper } from "./styles";
 
-const Header: FC<HeaderProps> = ({ zoom, topBarWidth }) => {
+const Header: FC<HeaderProps> = ({ zoom }) => {
   const { week } = useLanguage();
   const { date, cols, dayOfYear, startDate } = useCalendar();
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -45,7 +45,6 @@ const Header: FC<HeaderProps> = ({ zoom, topBarWidth }) => {
 
   return (
     <StyledOuterWrapper>
-      {/* <Topbar width={topBarWidth} /> */}
       <StyledWrapper id={canvasHeaderWrapperId}>
         <StyledCanvas ref={canvasRef} />
       </StyledWrapper>

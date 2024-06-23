@@ -32,22 +32,7 @@ const Scheduler = ({
   );
 
   const outsideWrapperRef = useRef<HTMLDivElement>(null);
-  const [topBarWidth, setTopBarWidth] = useState(outsideWrapperRef.current?.clientWidth);
   const defaultStartDate = useMemo(() => dayjs(startDate), [startDate]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (outsideWrapperRef.current) {
-        setTopBarWidth(outsideWrapperRef.current.clientWidth);
-      }
-    };
-
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   if (!outsideWrapperRef.current) null;
   return (
@@ -68,12 +53,7 @@ const Scheduler = ({
               id={outsideWrapperId}
               ref={outsideWrapperRef}>
               <StyledInnerWrapper>
-                <Calendar
-                  data={data}
-                  onTileClick={onTileClick}
-                  topBarWidth={topBarWidth ?? 0}
-                  onItemClick={onItemClick}
-                />
+                <Calendar data={data} onTileClick={onTileClick} onItemClick={onItemClick} />
               </StyledInnerWrapper>
             </StyledOutsideWrapper>
           </CalendarProvider>

@@ -7,7 +7,7 @@ import { Grid, Header, LeftColumn } from "..";
 import { CalendarProps } from "./types";
 import { StyledOuterWrapper, StyledInnerWrapper } from "./styles";
 
-export const Calendar: FC<CalendarProps> = ({ data, onTileClick, onItemClick, topBarWidth }) => {
+export const Calendar: FC<CalendarProps> = ({ data, onTileClick, onItemClick }) => {
   const { zoom, date } = useCalendar();
   const gridRef = useRef<HTMLDivElement>(null);
   const datesRange = useMemo(() => getDatesRange(date, zoom), [date, zoom]);
@@ -17,11 +17,11 @@ export const Calendar: FC<CalendarProps> = ({ data, onTileClick, onItemClick, to
     <StyledOuterWrapper>
       <LeftColumn data={page} rows={rowsPerItem} onItemClick={onItemClick} />
       <StyledInnerWrapper>
-        <Header zoom={zoom} topBarWidth={topBarWidth} />
+        <Header zoom={zoom} />
         {data.length ? (
           <Grid
             data={page}
-            zoom={zoom}
+            zoom={1}
             rows={totalRowsPerPage}
             ref={gridRef}
             onTileClick={onTileClick}
